@@ -2,7 +2,7 @@
 <!--
  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
- Copyright © 2011 ForgeRock AS. All rights reserved.
+ Copyright (c) 2011-2015 ForgeRock AS. All rights reserved.
 
  The contents of this file are subject to the terms
  of the Common Development and Distribution License
@@ -10,13 +10,13 @@
  compliance with the License.
 
  You can obtain a copy of the License at
- http://forgerock.org/license/CDDLv1.0.html
+ http://opensource.org/licenses/CDDL-1.0
  See the License for the specific language governing
  permission and limitations under the License.
 
  When distributing Covered Code, include this CDDL
  Header Notice in each file and include the License file
- at http://forgerock.org/license/CDDLv1.0.html
+ at http://opensource.org/licenses/CDDL-1.0
  If applicable, add the following below the CDDL Header,
  with the fields enclosed by brackets [] replaced by
  your own identifying information:
@@ -27,7 +27,7 @@
     <parent>
         <groupId>org.forgerock.openicf.connectors</groupId>
         <artifactId>connectors-parent</artifactId>
-        <version>1.1.1.0</version>
+        <version>1.5.0.0-SNAPSHOT</version>
     </parent>
     <groupId>org.forgerock.openicf.connectors</groupId>
     <artifactId>dummy-connector</artifactId>
@@ -42,18 +42,18 @@
     </issueManagement>
     <ciManagement>
         <system>jenkins</system>
-        <url>http://builds.forgerock.org/job/OpenICF - Dummy Connector</url>
+        <url>https://ci.forgerock.org/view/OpenICF/job/OpenICF - dummy-connector - postcommit/</url>
     </ciManagement>
     <scm>
-        <connection>scm:svn:https://svn.forgerock.org/openicf/trunk/connectors/java/dummy</connection>
-        <developerConnection>scm:svn:https://svn.forgerock.org/openicf/trunk/connectors/java/dummy</developerConnection>
-        <url>http://sources.forgerock.org/browse/openicf/trunk/connectors/java/dummy</url>
+        <connection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/dummy-connector.git</connection>
+        <developerConnection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/dummy-connector.git</developerConnection>
+        <url>http://stash.forgerock.org/projects/OPENICF/repos/dummy-connector/browse/</url>
     </scm>
     <properties>
         <connectorPackage>org.identityconnectors.dummy</connectorPackage>
         <connectorClass>DummyConnector</connectorClass>
-        <jira.componentIds>10191</jira.componentIds>
-        <jira.versionPrefix>${project.artifactId}</jira.versionPrefix>
+        <framework.compatibilityVersion>1.1</framework.compatibilityVersion>
+        <framework.releaseVersion>2.0</framework.releaseVersion>
     </properties>
     <repositories>
         <repository>
@@ -73,12 +73,51 @@
             </releases>
         </repository>
     </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>org.forgerock.openicf.framework</groupId>
+            <artifactId>connector-framework</artifactId>
+        </dependency>
+
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.forgerock.openicf.framework</groupId>
+            <artifactId>connector-framework-internal</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.forgerock.openicf.framework</groupId>
+            <artifactId>connector-test-common</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <groupId>org.forgerock.maven.plugins</groupId>
+                <artifactId>openicf-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>reduce-pom</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
