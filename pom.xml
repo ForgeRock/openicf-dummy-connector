@@ -65,12 +65,9 @@
             </snapshots>
         </repository>
         <repository>
-            <id>forgerock-snapshots-repository</id>
-            <name>ForgeRock Snapshot Repository</name>
-            <url>http://maven.forgerock.org/repo/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
+            <id>forgerock-private-releases</id>
+            <name>ForgeRock Private Releases Repository</name>
+            <url>http://maven.forgerock.org/repo/private-releases</url>
         </repository>
     </repositories>
     <dependencies>
