@@ -22,7 +22,8 @@
  your own identifying information:
  "Portions Copyrighted [year] [name of copyright owner]"
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.forgerock.openicf.connectors</groupId>
@@ -35,19 +36,15 @@
     <packaging>bundle</packaging>
     <name>Dummy Connector</name>
     <description>Connector for Dummy</description>
-    <url>https://openicf.forgerock.org/connectors/dummy-connector</url>
+    <url>https://openicf.forgerock.org/connectors/openicf-dummy-connector</url>
     <issueManagement>
-        <system>jira</system>
-        <url>https://bugster.forgerock.org/jira/browse/OPENICF/component/10191</url>
+        <system>github</system>
+        <url>https://openicf.forgerock.org/connectors/openicf-dummy-connector/issues</url>
     </issueManagement>
-    <ciManagement>
-        <system>jenkins</system>
-        <url>https://ci.forgerock.org/view/OpenICF/job/OpenICF - dummy-connector - postcommit/</url>
-    </ciManagement>
     <scm>
-        <connection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/dummy-connector.git</connection>
-        <developerConnection>scm:git:ssh://git@stash.forgerock.org:7999/openicf/dummy-connector.git</developerConnection>
-        <url>http://stash.forgerock.org/projects/OPENICF/repos/dummy-connector/browse/</url>
+        <connection>scm:git:git@github.com:forgerock/openicf-dummy-connector.git</connection>
+        <developerConnection>scm:git:git@github.com:forgerock/openicf-dummy-connector.git</developerConnection>
+        <url>scm:git:git@github.com:forgerock/openicf-dummy-connector.git</url>
     </scm>
     <properties>
         <connectorPackage>org.identityconnectors.dummy</connectorPackage>
