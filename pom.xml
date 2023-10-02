@@ -56,7 +56,7 @@
         <repository>
             <id>forgerock-staging-repository</id>
             <name>ForgeRock Release Repository</name>
-            <url>http://maven.forgerock.org/repo/releases</url>
+            <url>http://maven.forgerock.org/artifactory/releases</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -64,7 +64,7 @@
         <repository>
             <id>forgerock-private-releases</id>
             <name>ForgeRock Private Releases Repository</name>
-            <url>http://maven.forgerock.org/repo/private-releases</url>
+            <url>http://maven.forgerock.org/artifactory/private-releases</url>
         </repository>
     </repositories>
     <dependencies>
